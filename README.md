@@ -66,3 +66,11 @@ By sweeping parameters such as field rotation rate, field inclination, damping, 
 The purpose of this repository is to provide a reproducible computational environment for investigating magnetic bound-state dynamics beyond simple numerical simulation. The symbolic derivation of the equations of motion allows the assumptions, coordinate definitions, and model reductions to be inspected directly. The numerical solver enables time-domain simulations, while the animation, plotting, phase-portrait, and eigenvalue tools help connect nonlinear simulations with local stability analysis.
 
 This utility can be used as both a research notebook and an exploratory computational laboratory for angular magnetic dynamics, including magnetically bounded motion, rotating-field stabilization, resonance-like behavior, damping-dependent equilibrium states, non-axisymmetric instability mechanisms, and the relationship between nonlinear simulations and linearized eigenvalue spectra.
+
+## License
+
+This project is licensed under the Apache License 2.0.
+
+The official version of the project is maintained in this repository. Forks and modified versions are permitted under the license, but they should not be represented as the official version of this project.
+
+If you use the derivations, formulations, code, simulations, figures, or analysis results from this repository, please cite the archived release.
