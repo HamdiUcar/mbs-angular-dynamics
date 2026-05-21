@@ -1,0 +1,24 @@
+# Jupyter / widget interface
+jupyterlab
+ipython
+ipywidgets
+jupyterlab_widgets
+ipympl
+ipyvuetify
+anywidget
+
+# Scientific computing
+numpy
+scipy
+sympy
+mpmath
+pandas
+numba
+
+# Plotting and visualization
+matplotlib
+plotly
+
+# Utility packages
+pyperclip
+ffmpeg-python
