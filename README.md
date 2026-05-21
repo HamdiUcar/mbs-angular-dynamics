@@ -67,6 +67,36 @@ The purpose of this repository is to provide a reproducible computational enviro
 
 This utility can be used as both a research notebook and an exploratory computational laboratory for angular magnetic dynamics, including magnetically bounded motion, rotating-field stabilization, resonance-like behavior, damping-dependent equilibrium states, non-axisymmetric instability mechanisms, and the relationship between nonlinear simulations and linearized eigenvalue spectra.
 
+## Requirements
+* Python 3.10 or higher. Highest version tested: 3.14
+
+## Libraries needed
+* jupyterlab
+* ipython
+* ipywidgets
+* jupyterlab_widgets
+* ipympl
+* ipyvuetify
+* anywidget
+* numpy
+* scipy
+* sympy
+* mpmath
+* pandas
+* numba
+* matplotlib
+* plotly
+* pyperclip
+* ffmpeg-python
+
+## Installation
+
+You can install all the requirements using the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## License
 
 This project is licensed under the Apache License 2.0.
