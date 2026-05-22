@@ -67,6 +67,11 @@ The purpose of this repository is to provide a reproducible computational enviro
 
 This utility can be used as both a research notebook and an exploratory computational laboratory for angular magnetic dynamics, including magnetically bounded motion, rotating-field stabilization, resonance-like behavior, damping-dependent equilibrium states, non-axisymmetric instability mechanisms, and the relationship between nonlinear simulations and linearized eigenvalue spectra.
 
+## Derivations and Related Equations
+
+A screenshot of the application showing derivations of equations of motion, their linearization and related equations characterizing the angular dynamics is available here:
+[View derivation PDF](derivations.pdf)
+
 ## Requirements
 * Python 3.10 or higher. Highest version tested: 3.14
 
