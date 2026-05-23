@@ -114,7 +114,7 @@ If you use the derivations, formulations, code, simulations, figures, or analysi
 
 If you use this software, symbolic derivations, simulations, figures, or analysis results, please cite the archived release:
 
-Hamdi Ucar, *Angular Dynamics of Magnetically Bounded Bodies with Rotating Magnetic Fields*, version v1.0.0, Zenodo. DOI: 10.5281/zenodo.20315447
+Hamdi Ucar, *Angular Dynamics of Magnetically Bounded Bodies with Rotating Magnetic Fields*, version v1.0.1, Zenodo. DOI: 10.5281/zenodo.20315446
 
 ## Acknowledgements
 
