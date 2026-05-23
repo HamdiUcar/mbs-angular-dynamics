@@ -115,3 +115,9 @@ If you use the derivations, formulations, code, simulations, figures, or analysi
 If you use this software, symbolic derivations, simulations, figures, or analysis results, please cite the archived release:
 
 Hamdi Ucar, *Angular Dynamics of Magnetically Bounded Bodies with Rotating Magnetic Fields*, version v1.0.0, Zenodo. DOI: 10.5281/zenodo.20315447
+
+## Acknowledgements
+
+I gratefully acknowledge Daniel Paschall for his encouragement, support, and valuable discussions during various stages of the design, development, and testing of this project.
+
+I also acknowledge the use of ChatGPT by OpenAI as an assistance tool for design discussions, implementation suggestions, debugging, and documentation editing. The final scientific content, code, and conclusions are the responsibility of the author.
