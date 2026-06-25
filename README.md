@@ -52,8 +52,8 @@ The JupyterLab utility is organized into several sections:
 - **Section D — Linearization and Eigenvalue Analysis**  
   Presents the linearization of the equations of motion, the Jacobians, the state-matrix representation, and eigenvalue analysis. This section can calculate and plot eigenvalues with respect to selected parameters, making it possible to visualize stability limits and eigenfrequencies.
 
-- **Section E — Semi-Empirical Stability Criterion**  
-  Reformulates and simplifies the semi-empirical stability criterion originally proposed by Ucar (2021), expressing it in terms of the field elevation/tilt angle $\gamma$.
+- **Section E — Derivation of the Stability Criterion from Eigenvalue Bifurcation**  
+  Derives Ucar (2021)’s semi-empirical stability criterion from eigenvalue bifurcation and reformulates the formula in terms of the driving-field elevation/tilt angle $\gamma$. 
 
 ## Visualization and Numerical Tools
 
@@ -120,4 +120,4 @@ Hamdi Ucar, *Angular Dynamics of Magnetically Bounded Bodies with Rotating Magne
 
 I gratefully acknowledge Daniel Paschall for his encouragement, support, and valuable discussions during various stages of the design, development, and testing of this project.
 
-I also acknowledge the use of ChatGPT by OpenAI as an assistance tool for design discussions, implementation suggestions, debugging, and documentation editing. The final scientific content, code, and conclusions are the responsibility of the author.
+I also acknowledge the use of ChatGPT by OpenAI as an assistance tool for design discussions, implementation suggestions, debugging, and documentation editing.
