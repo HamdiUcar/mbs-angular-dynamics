@@ -7,7 +7,7 @@ import ipywidgets as W
 import numpy as np
 import sympy as sp
 import math
-from   mpmath import findroot,mpc
+from   mpmath import findroot, mpc
 from   sympy import Eq, latex, simplify, linear_eq_to_matrix
 from   sympy import Add, Mul, sin as sin, cos as cos, tan as tan, asin as asin
 import re
@@ -190,7 +190,7 @@ class ResearchContext(LazyAccordion):
 
 This application is a symbolic, numerical, and visual analysis framework for studying the angular dynamics of free or magnetically bounded bodies subjected to rotating magnetic fields. Magnetic bounding by rotating fields is a relatively new phenomenon in which a rigid body with a magnetic moment can be trapped at a precise location by a rotating magnetic field with a gradient, without requiring a local minimum of magnetic potential. The effect is essentially realizable with dipole magnets. In this interaction, the body couples to the field through its magnetic moment, which is fixed in the body frame, and may undergo translational and angular oscillations of typically small amplitude. These oscillations allow the body to find a quasi-stable equilibrium with the driving field and the confinement mechanism which impossible within magnetostatic except using diamagnetism.
 
-This work focuses on the angular part of the dynamics, which is responsible for keeping the body in proper alignment with the rotating field. In a basic model, the angular oscillation consists of a symmetric conical motion of the body's magnetic moment around the axis of the rotating field syncronized with this field. This alignment meschanism can be associated with the phase-lag property of driven oscillators; in this case the phase is held close to 𝜋, causing the body’s magnetic moment to be antiparallel to the field in the azimuthal components, while parallel alignment occurs in the zenithal components of the magnetic moment and the rotating field. 
+This work focuses on the angular part of the dynamics, which is responsible for keeping the body in proper alignment with the rotating field. In a basic model, the angular oscillation consists of a symmetric conical motion of the body's magnetic moment around the axis of the rotating field syncronized with this field. This alignment meschanism can be associated with the phase-lag property of driven oscillators; in this case the phase is held close to 𝜋, causing the body’s magnetic moment to be antiparallel to the field in the azimuthal components, while parallel alignment occurs in the zenithal components of the magnetic moment and the rotating field.
 
 Since antiparallel alignment results in repulsion and parallel in attraction, the stability in translational degrees of freedom is obtained by the system ability to adjust these opposing effects by variation of the zenithal angle of the body -- which, in turn, corresponds to the amplitude of this driven oscillation as a function of the strength of magnetic torque acting on the body.
 
@@ -214,7 +214,7 @@ Section C analyzes the behavior of the state variables in the presence of dampin
 
 Direct nonlinear simulations and eigenvalue results support each other in identifying stability limits and reproducing the observed eigenfrequencies. Simulations also reveal an angular instability mechanism when the body has a small non-axisymmetry, which is often encountered in experiments. In such cases, the nonlinear dynamics of the system can use this asymmetry to promote resonant angular modes.
 
-Section E reformulates Ucar (2021)’s semi-empirical stability formula in terms of the driving-field elevation angle γ. The formula is applicable to isotropic bodies under the condition 𝜓̇ = −𝜔 and is found to predict stability limits in agreement with both eigenvalue analyses and direct simulations.
+Section E derives Ucar (2021)’s semi-empirical stability criterion from eigenvalue bifurcation and reformulates the formula in terms of the driving-field elevation angle γ. The formula is applicable to isotropic bodies under the condition 𝜓̇ = −𝜔 under zero damping and is found to predict stability limits in agreement with both eigenvalue analyses and direct simulations.
 
 A central purpose of the application is to support the investigation of magnetic bound-state dynamics beyond simple numerical simulation. The symbolic derivation of the equations of motion allows the assumptions, coordinate definitions, and model reductions to be inspected directly. The numerical solver enables time-domain simulations, while the animation, plotting, and phase-portrait tools help visualize the physical motion and the evolution of state variables.
 
@@ -224,7 +224,7 @@ Therefore, this utility can be used as both a research notebook and an explorato
 
 """))
 
-            
+
 # —————————————————————————————————————————————————————————————————————————————————
 class QuickGuideAccordion(LazyAccordion):
     def __init__(self, accor_instance, child_index=0):
@@ -275,9 +275,7 @@ initial conditions in simulations.
 <span class='sb'>Section D</span> presents the linearization of equations of motion, Jacobians, state-matrix representation and eigenvalue analysis. Using this section,
 one can calculate and plot eigenvalues of a solution with respect to a user-selected parameter. This way, the stability of a solution and eigenfrequencies can be visualized.
 
-<span class='sb'>Section E</span> covers the reformulation and simplification of semi-empirical stability criterion originally proposed by Ucar (2021), expressing it in
-terms of the 'tilt' angle $\gamma$ of the rotating field.
-
+<span class='sb'>Section E</span> covers derivation of semi-empirical stability criterion originally proposed by Ucar (2021) from eigenvalue bifurcation and reformulates the formula in terms of the driving-field elevation angle $\gamma$.
 
 ### Fast Start
 1. **Page Layout**
@@ -304,7 +302,7 @@ terms of the 'tilt' angle $\gamma$ of the rotating field.
    Expand the <span class='sb'>Plots</span> panel to access graphical representations of the simulation results. By default, only the $\theta(t)$ plot is enabled. Additional
    time evaluation and phase portrait plots can be displayed using the checkboxes at the top of the panel. Displaying a new plot may take a few seconds. If initial conditions
    are automatically set for symmetric and stable motion of the body, time evaluation plots may only show residual variations of values, which can be up to 1e-6 for velocity
-   figures and 1e-10 for others. 
+   figures and 1e-10 for others.
 
 5. **Generate Eigenvalue Spectrum**
 
@@ -342,7 +340,7 @@ terms of the 'tilt' angle $\gamma$ of the rotating field.
       - $\gamma$ : Tilt angle of the $\vec{B}$ from $xy$-plane (complement of the zenith angle or elevation angle)<br>
         When $\gamma = 0$, $\vec{B}$ lies entirely in $xy$-plane. However as small tilt $\gamma_\min$ is required for a symmetric solution which generates a $z$-component
         of the field and forces the body's magnetic moment be aligned with it. It is found that there is a minimum $\gamma$ angle ensuring the angular motion of the body
-        symmetric regarding $z$-axis and can be calculated exactly for an isotropic body $(I_1$ = $I_2$ = $I_3)$. This formula 
+        symmetric regarding $z$-axis and can be calculated exactly for an isotropic body $(I_1$ = $I_2$ = $I_3)$. This formula
         $\gamma_\min = \sin^{-1}\Bigl(\dfrac{mB}{2 I \omega^2}\Bigr)$ is derived from linearized equation of motion of $\ddot\theta$ around the equilibrium point
         $\theta_{eq}$ from the proposed condition $\left. \dfrac{dF(\theta)}{d\theta}\right|_{\large{\theta=\theta_{eq}}} \le I\,\omega^{2}$ where $F$ is the right side
         of the equation of motion about $\ddot\theta$ in a solution where second derivatives of all variables are zero. This solution admits
@@ -369,17 +367,17 @@ terms of the 'tilt' angle $\gamma$ of the rotating field.
        the body to return to its initial position after one cycle of the rotating field without making a turn. The left button sets the calculation mode to
        ensure $\dot\psi = -\omega \cos\theta$. This option does not satisfy the above condition but sets the z component of the body's angular
        velocity in the body frame as zero ( $\nu_{\large z} = 0$ ). Once this mode is selected, parameters are calculated accordingly.
-       
+
      - It is possible to set initial condition (angles and velocities) using the state variables at a specified time point of a prior or a saved run. This might be useful
        for eliminating spurious oscillations caused by initial values do not satisfy equilibrium conditions when the application cannot provide them directly in the
        defined configuration. To address this, one may first perform a simulation with non-zero damping factor, allowing these oscillations to decay. The state variables
        at a later time when the system is close to equilibrium, can then be extracted and used as the initial conditions for a second simulation. By entering a time value
-       in the time field ( $t_0$ ) and pressing the <span class='sb'>'Set From Simul. at 𝑡₀'</span> button, the program selects values of state variables 
+       in the time field ( $t_0$ ) and pressing the <span class='sb'>'Set From Simul. at 𝑡₀'</span> button, the program selects values of state variables
        ( $\theta_0,\; \phi_0,\;\psi_0,$ $\dot{\theta}_0,\; \dot{\phi}_0,\; \dot{\psi}_0$ ) from the closest time point. User may set the check box <span class='sb'>％</span>
        to reduce $\phi_0,\; \psi_0$ to the $0 - 2 \pi$ range. After selecting initial value, one may reset $t_0 = 0$, which also defines the  time offset of the simulation
        since time variable begins at $t = t_0$.<br>
-       
- 
+
+
 3. <span class='sb'>Set Damping & Test Parameterss</span>
      - <span class='sb'>Damping</span> parameter can be set within $\xi$ entry. It is defined as acceleration per velocity in angular terms and its unit is $s^{-1}$.
        It is converted to a torque factor by multiplication with the moment-of-inertia. As explained in Box C, damping forces the body's z-component of angular
@@ -568,7 +566,7 @@ also when $\dot\phi \neq \omega$ and $\dot\psi \approx -\dot\phi$ with a small a
             display(Markdown(r"""
 <div class='sb2' style='margin-top:0.8em;'>Eq.8 is satisfied when $\; \dot\psi = - \cos(\theta)\dot\phi\,.$</div>
 <div class='sb'>Note: Any initial velocity $\dot\phi$ converges to $-\cos(\theta)\dot\phi \;$ in the presence of damping.</div>
-<hr style='width:1020px; margin:2em auto 3em 0; height:1px; border:none;'> 
+<hr style='width:1020px; margin:2em auto 3em 0; height:1px; border:none;'>
 
 ### 2. Finding the equilibrium value of the phase of $\theta$ rotation under damping ($\xi \neq 0$) for an axisymmetric body
 
@@ -817,167 +815,427 @@ R_{\textstyle x}(\beta)=\begin{pmatrix}1&0&0\\0&\cos\beta&-\sin\beta\\0&\sin\bet
 
 # —————————————————————————————————————————————————————————————————————————————————
 class SemiEmpAccordion(LazyAccordion):
-    def __init__(self, accor_instance, child_index=0):
+    def __init__(self, accor_instance, _em:EOMDiag, child_index=0):
         super().__init__(accor_instance, child_index=child_index)
+        self.em = _em
+
+#Matrix([[kappa*omega**2*cos(theta_0) - mB*sin(gamma)*cos(theta_0)/I1 - mB*sin(theta_0)*cos(gamma)*cos(phi_p)/I1, -mB*sin(phi_p)*cos(gamma)*cos(theta_0)/I1, 0, -xi/I1, kappa*omega*sin(theta_0), -omega*sin(theta_0)], [mB*sin(phi_p)*cos(gamma)*cos(theta_0)/(I1*sin(theta_0)**2), -mB*cos(gamma)*cos(phi_p)/(I1*sin(theta_0)), 0, -kappa*omega/sin(theta_0) - omega*cos(theta_0)/sin(theta_0), -xi/I1, 0], [-mB*sin(phi_p)*cos(gamma)/(I1*sin(theta_0)**2), mB*cos(gamma)*cos(phi_p)/(I1*tan(theta_0)), 0, kappa*omega*cos(theta_0)/sin(theta_0) + omega/sin(theta_0), 0, -xi/I1]])
+
+#Matrix([[-beta*sin(gamma)*cos(theta_0) + beta*sin(theta_0)*cos(gamma) + omega**2*cos(theta_0), 0, 0, 0, omega*sin(theta_0), -omega*sin(theta_0)], [0, beta*cos(gamma)/sin(theta_0), 0, -omega*cos(theta_0)/sin(theta_0) - omega/sin(theta_0), 0, 0], [0, -beta*cos(gamma)/tan(theta_0), 0, omega*cos(theta_0)/sin(theta_0) + omega/sin(theta_0), 0, 0]])
+
+    from textwrap import dedent
 
     def render_content(self):
         # this method will run once when the accordion is opened (or when created if already open)
+
+        def fmt_frac(mat):
+            s = latex(mat, order="none").replace(r'\frac', r'\dfrac')
+            return re.sub(r'\\\\', r'\\\\[9pt]', rem_par(s))
+
+        em = self.em
+        a, s, c, beta, lam = sp.symbols("a s c beta lambda")
+        #jj = JEmIso.subs({em.xi:0, em.kappa:1, sin(em.the_0): s, cos(em.the_0): c, em.phi_p: sp.pi})
+        jj = em.J_iso
+        jj[0, 0] = jj[0, 0].expand()
+        jj = jj.subs({em.xi:0, em.kappa: 1, em.phi_p: sp.pi, em.mB/em.I1: beta})
+        jj[0, 0] = jj[0, 0].collect(beta)
+
+        jjc = jj.subs({sin(em.the_0): s, cos(em.the_0): c})
+        jjc[0,0] = jjc[1,1]
+        jjc = jjc.subs({ beta * cos(em.gamma) / s: a, beta * cos(em.gamma) / tan(em.the_0): a*c})
+
+        J_q    = jjc[:, :3]
+        J_qdot = jjc[:, 3:]
+        M = lam**2 * sp.eye(3) - J_q - lam * J_qdot
+        M = sp.simplify(M)
+        detM = sp.factor(M.det()).expand().simplify()
+        detM = detM.collect(2*lam**2).collect(em.omega).collect(a) #.subs((1-c**2), s**2)
+        detM_nt = detM/lam**2
+
+        z = sp.symbols("z")
+
+        #expr = a**2 - a*omega**2*s**2 + lam**4 + 2*lam**2*(-a + omega**2*(c + 1))
+
+        P = detM_nt.subs(lam**2, z)
+        disc = sp.discriminant(P, z)
+        disc = sp.factor(disc)
+        #disc = sp.factor(disc.subs(s**2, 1 - c**2))
+        disc.simplify().collect(a).collect(em.omega)
+        #jj = sp.collect(jj, em.omega)
+        #J00_orig = jj[0, 0]
+        #J00_simp = beta * sp.cos(em.gamma) / sp.sin(em.the_0)  # adapt names if needed
+
+        F = em.eom_iso[0].rhs
+        dF = sp.diff(F, em.th)
+        dF = dF.subs({em.th: em.the_0, em.ph: em.omega*em.t + sp.pi, em.ps: -em.omega*em.t})
+        dF_I = dF/em.I
+        dF_I = sp.expand_trig(dF_I.simplify().subs(em.mB/em.I, beta)).expand().collect(beta)
+
         with self.output: #semi_empiric_box:
+            display(Markdown(rf"""<div class='sb' style='max-width:1020px; margin-top: 2em;'>
+Ucar’s 2021 paper introduced a semi-empirical criterion for the stability of the angular motion of an isotropic magnetic body
+for the simple case where damping is zero and body returns to its initial state after one cycle of the rotating field without
+making a full turn. In the notation used here, this branch is described by $(\theta=\theta_0)$, $(\phi=\omega t+\phi_p)$, and
+$(\psi=-\omega t)$, with $(\phi_p=\pi)$, which corresponds to antiparallel alignment of the transverse projection of the body’s
+magnetic moment with the rotating transverse component of the external magnetic field. Under this phase convention, the criterion
+is defined as<br><br>
+
+$
+(1)\phantom{{0}} \qquad \dfrac{{d F}}{{d \theta}} < I \omega^2 \, .
+$
+
+where $F$ denotes the right-hand side of the equation of motion about the state variable $\theta$, $I$ is the isotropic moment of
+inertia, and $\omega$ is the angular velocity of the external magnetic field. This condition states that $\dfrac{{dF}}{{d\theta}}$
+should be always less than $I\omega^2$ and since $F(\theta)$ has maximum slope at equlilibrium angle $\theta_0$ while it crosses
+zero. The same sinusoidal zero-crossing slope argument was used in the earlier heuristic criterion, although the angular-coordinate
+notation $(\theta,\,\varphi)$ in that work was interchanged relative to the notation used here. This criterion can be also written as
+
+$
+(2)\phantom{{0}} \qquad\left. \dfrac{{dF}}{{d\theta}} \right|_{{\theta=\theta_0}} < I\omega^2 \,.
+$
+
+This criterion was found to be accurate in numerical simulations and was later seen to coincide with the point where the eigenvalues
+of the linearized system undergo a bifurcation. Therefore, for the synchronized solution under the same constraints, $(\kappa=1)$ and
+zero damping, the criterion may be derived from the Jacobian matrices of the corresponding linearized system.
+
+It should be noted that the synchronized equilibrium branch considered here satisfies $(0<\theta_0<\pi/2)$, $(0<\gamma<\pi/2)$, and
+$(\phi_p=\pi)$, corresponding to antiparallel alignment of the transverse projection of the body’s magnetic moment with the rotating
+transverse component of the external magnetic field. These assumptions define the branch used throughout the derivation; the sign of
+the zero-crossing slope follows below from the equilibrium condition.
+
+Starting from the Jacobian for an isotropic body Eq.24 and Eq.25 in Section D - Linearization and Eigenvalue Analysis, by applying
+$(\kappa = 1)$ and zero damping $(\xi = 0)$ constraints, we get:
+
+$
+(3)\phantom{{0}} \qquad J(q) = {fmt_frac(jj[:, :3])}\,,$
+<div style='height:30px'></div>
+$
+(4)\phantom{{0}} \qquad J(\dot{{q}}) = {fmt_frac(jj[:, 3:])}\,,
+$
+
+<br>where $\beta$ denotes $mB/I$. The equilibrium condition of the synchronized solution, $F(\theta_0)=0$, gives
+
+$
+(5)\phantom{{0}} \qquad\beta\cos\gamma\cos\theta_0 = \left(\omega^2-\beta\sin\gamma\right)\sin\theta_0 .
+$
+
+Multiplying the corresponding rearranged form by $\cos\theta_0$, we obtain
+
+$
+(6)\phantom{{0}}\qquad\left(\omega^2-\beta\sin\gamma\right)\cos\theta_0 = \dfrac{{\beta\cos\gamma\cos^2\theta_0}}{{\sin\theta_0}} .
+$
+
+Using Eq. (6), the first element of $J(q)$ becomes
+
+$
+(7)\qquad\phantom{{0}}
+\begin{{aligned}}
+J_{{11}}
+&=
+\left(\omega^2-\beta\sin\gamma\right)\cos\theta_0
++\beta\sin\theta_0\cos\gamma \\[6pt]
+&=
+\dfrac{{\beta\cos\gamma\cos^2\theta_0}}{{\sin\theta_0}}
++\beta\sin\theta_0\cos\gamma \\[6pt]
+&=
+\beta\cos\gamma
+\left(
+\dfrac{{\cos^2\theta_0}}{{\sin\theta_0}}
++
+\sin\theta_0
+\right) \\[6pt]
+&=
+\dfrac{{\beta\cos\gamma}}{{\sin\theta_0}} .
+\end{{aligned}}
+$
+</div>"""))
+            jj[0,0] = jj[1,1]
+            display(Markdown(rf"""<div class='sb' style='max-width:1020px'>
+The Jacobians for this solution can therefore be written as<br><br>
+
+$
+(8)\phantom{{0}}\qquad\ J(q) | J(\dot{{q}}) = {fmt_frac(jj[:3, :])}\,.
+$
+
+Introducing the compact symbols
+
+$
+(9)\phantom{{0}}\qquad\ a = \dfrac{{\beta\cos\gamma}}{{\sin\theta_0}}, \qquad s= \sin(\theta_0), \qquad c= \cos(\theta_0)\, ,
+$
+
+the Jacobians take the compact form
+
+$
+(10)\qquad\ J(q) | J(\dot{{q}}) = {fmt_frac(jjc[:3, :])}\,.
+$
+
+We assume a modal perturbation of the form
+
+$
+(11)\qquad\ \delta q(t) = \hat{{q}}e^{{\lambda t}}, \qquad \hat{{q}} = \begin{{bmatrix}}\hat\theta \\ \hat\phi \\ \hat\psi \end{{bmatrix}}.
+$
+
+Differentiating Eq. (11) with respect to time gives
+
+$
+(12)\qquad\ \delta \dot q(t) = \lambda\,\hat q \, e^{{\lambda t}},
+$
+
+and
+
+$
+(13)\qquad\ \delta \ddot q(t) = \lambda^2\,\hat q \, e^{{\lambda t}}.
+$
+
+The linearized perturbation equation is
+
+$
+(14)\qquad\ \delta \ddot q = J_q\,\delta q + J_{{\dot q}}\,\delta \dot q
+$
+
+Substituting Eqs. (11)--(13) into Eq. (14), and canceling the common factor $e^{{\lambda t}}$, gives
+
+$
+(15)\qquad\ \lambda^2 \hat q = J_q\,\hat q + \lambda J_{{\dot q}}\, \hat q\,.
+$
+
+Therefore
+
+$
+(16)\qquad\ (\lambda^2 \, I_3 - \lambda \, J_{{\dot q}} - J_q)\hat q = 0\,.
+$
+
+The modal matrix is therefore
+
+$
+(17)\qquad\ M(\lambda) = \lambda^2 \, I_3 - \lambda \, J_{{\dot q}} - J_q\,.
+$
+
+Expanding Jacobians matrices above, gives
+
+$
+(18)\qquad\ M(\lambda) = {fmt_frac(M)}\,.
+$
+
+A nonzero modal amplitude vector $\hat q \ne 0$ exists only if
+
+$
+(19)\qquad\ \det M(\lambda) = {fmt_frac(detM)} = 0\,.
+$
+
+The determinant shows that the prefactor $\lambda^2$ corresponds to two zero eigenvalues. The nontrivial characteristic polynomial is
+
+$
+(20)\qquad\ {fmt_frac(detM_nt)} = 0\,.
+$
+
+The discriminant of this quadratic polynomial in $\lambda^2$ is
+
+$
+(21)\qquad\ \Delta = {fmt_frac(disc)}\,.
+$
+
+The eigenvalue transition occurs when this discriminant vanishes, which gives
+
+$
+(22)\qquad\ a = \omega^2\,.
+$
+
+On the other hand, denoting the derivative of $F$ evaluated at equilibrium as
+$
+F_{{\theta,0}} \equiv \left. \dfrac{{dF}}{{d\theta}} \right|_{{\theta=\theta_0}},
+$ we can express $\dfrac{{F_{{\theta,0}}}}{{I}}$ as
+
+$
+(23)\qquad\ \dfrac{{F_{{\theta,0}}}}{{I}} = {fmt_frac(dF_I)}\,.
+$
+
+Since the right-hand side of Eq. (23) is identical to the expression for $J_{{11}}$ before simplification in Eq. (7), we obtain
+
+$
+(24)\qquad \dfrac{{F_{{\theta,0}}}}{{I}} = J_{{11}} = \dfrac{{\beta\cos\gamma}}{{\sin\theta_0}} = a .
+$
+
+As the present derivation is restricted to the synchronized branch satisfying $(0<\theta_0<\pi/2)$ and $(0<\gamma<\pi/2)$, Eq. (24) implies $(F_{{\theta,0}}>0)$, so the selected equilibrium corresponds to the positive-slope zero crossing of $(F(\theta))$.
+
+Since Eq. (22) gives the eigenvalue transition at $a=\omega^2$, the stable side of the synchronized branch is
+
+$
+(25)\qquad a < \omega^2 .
+$
+
+Using Eq. (24), this becomes
+
+$
+(26)\qquad \dfrac{{F_{{\theta,0}}}}{{I}} < \omega^2 .
+$
+
+Therefore,
+
+$
+(27)\qquad F_{{\theta,0}} < I\omega^2 ,
+$
+
+or equivalently,
+
+$
+(28)\qquad
+\left. \dfrac{{dF}}{{d\theta}} \right|_{{\theta=\theta_0}}
+<
+I\omega^2 .
+$
+
+Thus, the eigenvalue bifurcation condition recovers the semi-empirical stability criterion.
+
+To obtain the explicit minimum angle, the right-hand side of the $\theta$ equation is written as
+
+$
+(29)\qquad F(\theta) = I\omega^2\sin\theta - mB\left(\cos\gamma\cos\theta+\sin\gamma\sin\theta\right)\,.
+$
+
+Equivalently,
+
+$
+(30)\qquad F(\theta) = \left(I\omega^2-mB\sin\gamma\right)\sin\theta - mB\cos\gamma\cos\theta\,.
+$
+
+This is a sinusoidal function of $\theta$. Since $F(\theta_0)=0$, it crosses zero at the equilibrium angle $\theta_0$. The amplitude of this sinusoid is
+
+$
+(31)\qquad u= \sqrt{{ \left(I\omega^2-mB\sin\gamma\right)^2 + \left(mB\cos\gamma\right)^2}}\,.
+$
+
+For the synchronized branch considered here, the equilibrium corresponds to the positive-slope zero crossing.
+Therefore, the derivative at equilibrium is equal to the amplitude of the sinusoid:
+
+$
+(32)\qquad F_{{\theta,0}} = u\,.
+$
+
+Therefore, Eq. (27) becomes
+
+$
+(33)\qquad u < I\omega^2\,.
+$
+
+Substituting Eq. (31) into Eq. (33) gives
+
+$
+(34)\qquad \sqrt{{\left(I\omega^2-mB\sin\gamma\right)^2 + \left(mB\cos\gamma\right)^2}} < I\omega^2\,.
+$
+
+Squaring both sides,
+
+$
+(35)\qquad \left(I\omega^2-mB\sin\gamma\right)^2 + m^2B^2\cos^2\gamma < I^2\omega^4\,.
+$
+
+Expanding,
+
+$
+(36)\qquad I^2\omega^4 - 2I\omega^2mB\sin\gamma + m^2B^2\sin^2\gamma + m^2B^2\cos^2\gamma < I^2\omega^4\,.
+$
+
+Using $\sin^2\gamma+\cos^2\gamma=1$, this becomes
+
+$
+(37)\qquad I^2\omega^4 - 2I\omega^2mB\sin\gamma + m^2B^2 < I^2\omega^4\,.
+$
+
+After cancellation,
+
+$
+(38)\qquad m^2B^2 - 2I\omega^2mB\sin\gamma < 0\,.
+$
+
+Therefore,
+
+$
+(39)\qquad 2I\omega^2\sin\gamma > mB\,.
+$
+
+Thus,
+
+$
+(40)\qquad \boxed{{ \sin\gamma > \dfrac{{mB}}{{2I\omega^2}} }}\,.
+$
+
+The minimum tilt angle is therefore
+
+$
+(41)\qquad \boxed{{ \gamma_{{\min}} = \sin^{{-1}} \left(\dfrac{{mB}}{{2I\omega^2}}\right)}}\,.
+$
+
+The original semi-empirical criterion in the 2021 paper was written using the static and cyclic torque factors, denoted here by $\tau_S$ and $\tau_C$. In that notation, the criterion is
+
+$
+(42)\qquad \tau_S > I\omega^2 - \sqrt{{ \left(I\omega^2\right)^2-\tau_C^2}}\,.
+$
+
+Here $\tau_S$ is the maximum torque factor associated with the axial, static field component, and $\tau_C$ is the maximum torque factor associated with the radial, cyclic field component. For a field written in terms of the tilt angle $\gamma$,
+
+$
+(43)\qquad\tau_C=mB\cos\gamma, \qquad\tau_S=mB\sin\gamma\,.
+$
+
+Let
+
+$
+(44)\qquad T=I\omega^2\,.
+$
+
+Then Eq. (42) becomes
+
+$
+(45)\qquad \tau_S>T-\sqrt{{T^2-\tau_C^2}}\,.
+$
+
+Moving terms gives
+
+$
+(46)\qquad \sqrt{{T^2-\tau_C^2}}>T-\tau_S\,.
+$
+
+Squaring both sides,
+
+$
+(47)\qquad T^2-\tau_C^2 > T^2-2T\tau_S+\tau_S^2\,.
+$
+
+After cancellation,
+
+$
+(48)\qquad 2T\tau_S>\tau_S^2+\tau_C^2\,.
+$
+
+Since
+
+$
+(49)\qquad \tau_S^2+\tau_C^2 = m^2B^2\sin^2\gamma+m^2B^2\cos^2\gamma = m^2B^2\,,
+$
+
+Eq. (48) becomes
+
+$
+(50)\qquad 2I\omega^2mB\sin\gamma>m^2B^2\,.
+$
+
+Dividing by $mB$ gives
+
+$
+(51)\qquad 2I\omega^2\sin\gamma>mB\,.
+$
+
+Therefore,
+
+$
+(52)\qquad \boxed{{ \sin\gamma>\dfrac{{mB}}{{2I\omega^2}}}}\,.
+$
+
+Thus, the torque-factor criterion of the 2021 formulation is equivalent to Eq. (40), which was obtained from the eigenvalue bifurcation condition.
+</div>"""))
+
             display(Markdown(r"""<div class='sb' style='max-width:1020px; margin-top: 2em;'>
-Ucar's 2021 paper contains a semi-empirical criterion $(23)$ for the stability of the angular motion of an isotropic body. Here, this derivation is reformulated
-by using elevation angle (also called tilt angle) $\gamma$ of the rotating field and simplified. Assuming a solution in which the motion is symmetric and fully
-synchronized with the driving field (so that time-dependent terms vanish), the function $F$ is defined as the right-hand side of the equation of motion about state
-variable $\theta$. By taking the derivative $dF/d\theta$, it is shown that $F$ has a maximum slope as it crosses zero at equilibrium angle $\theta_0$. Comparing
-this maximum slope value to the quantity $I \omega^2$ (scalar moment-of-inertia multiplied by the square of the driving field angular velocity), it is stated that
-the motion can be stable and symmetric around the $z$-axis when the following condition is met.
-
-$
-(1)\phantom{0} \qquad \dfrac{d F}{d \theta} < I \omega^2 \, .$
-
-Here $\omega$ denotes the angular velocity of the driving magnetic field $B$. This semi-empirical formula is accurate in the undamped case. In the presence of damping,
-the minimum angle $\gamma$ required for stability is found greater than the value corresponding to zero damping and can be determined numerically using the eigenvalue analysis.
-
-The equilibrium solution given in 2021 paper (with Euler angle $\varphi$ relabeled as $\theta\,$) can be written as
-
-$
-(2)\phantom{0} \qquad \tau_C \cos \theta_0 + \tau_S \sin \theta_0 - I \omega^2 \sin \theta_0 = 0 \, .
-$
-
-Here $\tau_C$ and $\tau_S$ correspond to the maximum strengths of cyclic (rotating) and static magnetic torques such as
-
-$
-(3)\phantom{0} \qquad \tau_C = \lvert m \rvert \, \lvert B_{\perp} \rvert \,,
-    \qquad \tau_S = \lvert m \rvert \, \lvert B_{\parallel} \rvert \,,
-$
-
-where $\lvert m \rvert$ is the strength of the magnetic moment of the floating body,
-$\lvert B_{\perp} \rvert$ is the strength of the rotating magnetic field orthogonal to the $z$-axis and
-$\lvert B_{\parallel} \rvert$ is the strength of a static magnetic field parallel to $z$-axis.
-
-In the case of $B_{\perp}$ and $B_{\parallel}$ are respectively radial and axial components of a field $B$, these components can be formulated as
-
-$
-(4)\phantom{0} \qquad B_{\perp} =     \lvert B \rvert \cos \gamma \,,
-    \qquad B_{\parallel} = \lvert B \rvert \sin \gamma \, .
-$
-
-where $\gamma$ is deviation angle of $B$ from the radial ($xy$) plane. Applying this to $(2)$, we obtain
-
-$
-(5)\phantom{0} \qquad 0 = m\!B \big( \cos\gamma \, \cos\theta_0 + \sin\gamma \, \sin\theta_0 \big) - I \,\omega^2 \sin\theta_0, \qquad m\!B = \lvert m \rvert \, \lvert B \rvert \, .
-$
-
-which is equal to the equation of motion about $\ddot\theta$ under equilibrium condition for an isotropic body with zero damping.
-
-This equation allows to derive $\theta_0$ as
-
-$
-(6)\phantom{0} \qquad \theta_0 = \tan^{-1}\Big(\dfrac{m\!B \,\cos \gamma}{I\,\omega^2 -m\!B \,\sin \gamma}\Big) \, .
-$
-
-Introduce variables $u$ and $v$ by
-
-$
-(7)\phantom{0} \qquad u\,\cos v  = I \omega^2 - m\!B\,\sin\gamma\,,
-$
-
-$
-(8)\phantom{0} \qquad u\,\sin v  = m\!B\,\cos\gamma\,,
-$
-
-so that
-
-$
-(9)\phantom{0} \qquad u = \sqrt{{(I \omega^2 - m\!B\,\sin\gamma)}^2 + {(m\!B\,\cos\gamma)}^2 \rule{0pt}{0.9em}} \,,
-$
-
-$
-(10) \qquad v = \tan^{-1}\Big(\dfrac{m\!B\,\cos\gamma}{I \omega^2 - m\!B\,\sin\gamma}\Big) \, .
-$
-
-This way under equilibrium condition, the function $F$ ( right hand side of $(5)$ ) can be expressed as
-
-$
-(11) \qquad F(\theta_0) = u\, \cos v \, \sin \theta - u\, \sin v \, \cos \theta \, .
-$
-
-Factoring and applying trigonometric identity
-
-$
-(12) \qquad F(\theta_0) = u\, \sin (\theta_0 - v) \, .
-$
-
-Expressing $\tfrac{d F_0}{d \theta}$ in the same way
-
-$
-(13) \qquad F'(\theta_0) = u\, \cos (\theta_0 - v) \, .
-$
-
-Under equilibrium state $(\theta = \theta_0)$, the term $(v - \theta_0)$ becomes zero since $v = \theta_0$ according $(6)$ and $(10)$. Applying this in $(13)$,
-the cosine term becomes equal to one and vanishes.
-
-$
-(14) \qquad F'(\theta_0) = u.
-$
-
-By using this substitution, the empirical stability condition $(1)$ can be written as
-
-$
-(15) \qquad u < I \omega^2 \, .
-$
-
-Squaring both sides and arranging terms, the inequality becomes
-
-$
-(16) \qquad {(I \omega^2)}^2 - u^2 > 0 \, .
-$
-
-By expanding $u^2$ and applying Pythagorean identity as
-
-$
-(17) \qquad u^2 ={(I \omega^2)}^2 - 2I \omega^2 \,m\!B\, \sin\gamma + m\!B^2 \,,
-$
-
-we can express $(16)$ as
-
-$
-(18) \qquad 2 I \omega^2 \,m\!B\, \sin \gamma - m\!B^2 > 0 \, .
-$
-
-Simplify ($m\!B$ is a positive figure)
-
-$
-(19) \qquad 2 I \omega^2 \sin \gamma - m\!B > 0 \, .
-$
-
-Finally obtain the solution of semi-empirical criterion $(1)$ as
-
-$\boxed{
-(20) \qquad \sin \gamma > \dfrac{m\!B}{2 I \omega^2}\,.\qquad
-}$
-
-As a note, this equation gives precise results in simulations despite being derived from an empirical criterion.
-
-This result can be verified by defining $\sin\gamma_{\min} = \dfrac{m\!B}{2 I \omega^2}$ and applying it to $(9)$.
-
-$
-(21) \qquad u \Big|_{\large \gamma=\gamma_{\min}} = I \omega^2\, .
-$
-
-
-Applying this to $(14)$, we obtain the derivative of $F_0$ with respect to $\theta$ when $\gamma = \gamma_{\min}$
-
-$
-(22) \qquad F'(\theta_0)\Big|_{\large \gamma=\gamma_{\min}} = I \omega^2 \,,
-$
-
-which is consistent with $(1)$ and may help to verify this derivation.
-<hr>
-The stability criterion obtained in Ucar's 2021 paper:<br>
-
-$
-(23) \qquad \tau_S > I \omega^2 - {\big( {(I \omega^2)}^2 - {\tau_C}^2\big)}^{1/2} \, .
-$
 <hr>
 <b>Notes:</b>
 
