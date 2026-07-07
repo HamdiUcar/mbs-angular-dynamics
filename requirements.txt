@@ -18,6 +18,7 @@ numba
 # Plotting and visualization
 matplotlib
 plotly
+kaleido
 
 # Utility packages
 pyperclip
